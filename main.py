@@ -60,6 +60,30 @@ def menu():
     print('0 - Voltar!')
     option = input('Escolha uma opção: ')
 
+    if option == '1':
+        print('Opção 1 selecionada...')
+    elif option == '2':
+        print('Opção 2 selecionada...')
+    elif option == '3':
+        print('Opção 3 selecionada...')
+    elif option == '4':
+        print('Opção 4 selecionada...')
+    elif option == '5':
+        print('Opção 5 selecionada...')
+    elif option == '6':
+        print('Opção 6 selecionada...')
+    elif option == '7':
+        print('Opção 7 selecionada...')
+    elif option == '0':
+        return
+    else:
+        print('Opção inválida. Escolha uma opção válida.')
+
+    input('Pressione Enter para continuar...')
+    menu()
+
+    
+
 # Menu principal
 while True:
     clear_screen()
