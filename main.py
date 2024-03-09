@@ -19,10 +19,10 @@ c = float (299792458) # Velocidade da luz no vácuo em m/s
 # Variáveis
 f = float (0) # Frequência em Hz
 l = float (0) # Comprimento de onda em m
-k = float (0) # Número de onda
-w = float (0) # Frequência angular
-Em = float (0) # Intensidade do campo elétrico em V/m
-Bm = float (0) # Intensidade do campo magnético em T
+k = float (0) # Número de onda em rad/m
+w = float (0) # Frequência angular em rad/s
+Em = float (0) # Amplitude do campo elétrico em V/m
+Bm = float (0) # Amplitude do campo eletromagnético em T
 I = float (0) # Intensidade da corrente em A
 
 
