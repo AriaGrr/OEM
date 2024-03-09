@@ -10,10 +10,55 @@
 # Conversores:
 # Menu: 
 
+# Variaveis globais
+
+# Constantes
+pi = float (3.14159265359) # Número pi
+c = float (299792458) # Velocidade da luz no vácuo em m/s
+
+# Variáveis
+f = float (0) # Frequência em Hz
+l = float (0) # Comprimento de onda em m
+k = float (0) # Número de onda
+w = float (0) # Frequência angular
+Em = float (0) # Intensidade do campo elétrico em V/m
+Bm = float (0) # Intensidade do campo magnético em T
+I = float (0) # Intensidade da corrente em A
+
+
+# Função para limpar a tela do terminal
 def clear_screen():
-    # Função para limpar a tela do terminal
     print('\033[H\033[J')
 
+def limpar_variaveis():
+    f = 0
+    l = 0
+    k = 0
+    w = 0
+    Em = 0
+    Bm = 0
+    I = 0
+
+# Função para o menu de equações
+def menu():
+    clear_screen()
+    print('Opções de entradas:')
+    print('1 - Amplitude do campo elétrico (Em):')
+    print('Retorna Bm e I.')
+    print('2 - Amplitude do campo magnético (Bm):')
+    print('Retorna Em e I.')
+    print('3 - Intensidade (I):')
+    print('Retornara Bm e Em.')
+    print('4 - Frequencia (f):')
+    print('Retorna lambda, k e w.')
+    print('5 - Comprimento de onda (lambda):')
+    print('Retorna f, k e w.')
+    print('6 - Número de onda (k):')
+    print('Retorna f, lambda e w.')
+    print('7 - Frequencia angular (w):')
+    print('Retorna f, lambda e k.')
+    print('0 - Voltar!')
+    option = input('Escolha uma opção: ')
 
 # Menu principal
 while True:
@@ -25,11 +70,20 @@ while True:
     print('Paragrafo com a descrição do programa')
 
     print('Opções:')
-    print('1 - Teste')
+    print('1 - Equações')
+    print('2 - Conversores')
+    print('3 - Limpar variáveis')
+    print('0 - Sair')
     option = input('Escolha uma opção: ')
 
     if option == '1':
-        print('Teste')
+        print('Redirecionando para o menu de equações...')
+        menu()
+    elif option == '2':
+        print('Redirecionando para o menu de conversores...')
+    elif option == '3':
+        print('Limpando variáveis...')
+        limpar_variaveis()
     elif option == '0':
         break
     else:
