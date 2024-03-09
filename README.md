@@ -17,5 +17,5 @@ e intensidade (I) da onda eletromagnética.
 1) Entrada: Em; Bm ou I.
 Saída: a) Bm e I (se entrada = Em); b) Em e Bm (se entrada = I); c) Em e I (se entrada = Bm);
 2) Entrada: f, lambda, k ou w.
-Saída: a) lambda, k e w (se entrada = f); b) f, k e w (se entrada = lambda); c) f, lambda e  (se entrada = k); d) f, lambda e k (se
+Saída: a) lambda, k e w (se entrada = f); b) f, k e w (se entrada = lambda); c) f, lambda e w (se entrada = k); d) f, lambda e k (se
 entrada = w);
