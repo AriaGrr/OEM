@@ -39,21 +39,21 @@ def clear_screen():
     print('\033[H\033[J')
 
 def limpar_variaveis():
-    f = 0
-    l = 0
-    k = 0
-    w = 0
-    Em = 0
-    Bm = 0
-    I = 0
+    f = Decimal(0)
+    l = Decimal(0)
+    k = Decimal(0)
+    w = Decimal(0)
+    Em = Decimal(0)
+    Bm = Decimal(0)
+    I = Decimal(0)
 
 # Função para verificar se o valor é um número
-def is_number(s):
-    try:
-        float(s)
-        return True
-    except ValueError:
-        return False
+#def is_number(s):
+    #try:
+        #float(s)
+        #return True
+    #except ValueError:
+        #return False
 
 # Corrigir as funções de calculo abaixo.
 
@@ -154,13 +154,16 @@ def menu():
         #if option == 's':
 
         print('Digite a amplitude do campo elétrico (Em) em V/m:')
-        Em = input('Em: ')
-        if not is_number(Em):
-            print('Valor inválido. Tente novamente.')
-            return
-        Em = Decimal(Em)
-        Bm = amplitude_campo_magnetico()
+        Em = Decimal(input('Em: '))
+        #if not is_number(Em):
+            #print('Valor inválido. Tente novamente.')
+            #return
+        #Em = Decimal(round(float(Em), 4))
+
+        Bm = Decimal(round(amplitude_campo_magnetico(), 4))
+        
         I = intensidade_onda()
+        
         # Teste verificando se está salvando corretamente, resposta da saida em conflito no tester do moodle!
         print(Em)
         print(Bm)
