@@ -80,7 +80,7 @@ def numero_onda():
 
 # Função para calcular a amplitude do campo elétrico
 def amplitude_campo_eletrico():
-    Em = Bm * c * u
+    Em = Bm * c 
     return Em
 
 # Função para calcular a intensidade da onda
@@ -101,20 +101,23 @@ def amplitude_campo_magnetico():
 
 # Função para converter ut para T
 def ut_para_t(s):
-    s = Decimal(10**-6)
-    return s
+    t = s / 1000000
+    return t
 
 # Função para converter T para ut
 def t_para_ut(s):
-    s = Decimal(10**6)
-    return s
+    t = s * 1000000
+    return t
 
 # Função para o menu de conversores
 def conversores():
     clear_screen()
     print('Opções de conversão:')
+    #Correta
     print('1 - Microtesla para Tesla (ut -> T)')
+    #
     print('2 - Tesla para Microtesla (T -> ut)')
+    #
     print('0 - Voltar!')
     option = input('Escolha uma opção: ')
 
@@ -154,23 +157,23 @@ def menu():
     # Correta
     print('1 - Amplitude do campo elétrico (Em) em V/m:')
     print('Retorna Bm e I.')
-    #
-    print('2 - Amplitude do campo magnético (Bm):')
+    # Correta
+    print('2 - Amplitude do campo magnético (Bm) em T:')
     print('Retorna Em e I.')
     #
-    print('3 - Intensidade da onda (I):')
+    print('3 - Intensidade da onda (I) em W/m^2:')
     print('Retorna Bm e Em.')
     #
-    print('4 - Frequencia (f):')
+    print('4 - Frequencia da onda (f) em Hz:')
     print('Retorna lambda, k e w.')
     #
-    print('5 - Comprimento de onda (lambda):')
+    print('5 - Comprimento de onda (lambda) em m:')
     print('Retorna f, k e w.')
     #
-    print('6 - Número de onda (k):')
+    print('6 - Número de onda (k) em rad/m:')
     print('Retorna f, lambda e w.')
     #
-    print('7 - Frequencia angular (w):')
+    print('7 - Frequencia angular (w) em rad/s:')
     print('Retorna f, lambda e k.')
     #
     print('0 - Voltar!')
@@ -206,6 +209,7 @@ def menu():
         print('s/n')
         option = input('Escolha uma opção: ')
         if option == 's':
+            print('Digite a amplitude do campo magnético (Bm) em T:')
             Bm = Decimal(input('Bm: '))
             #if not is_number(Bm):
                 #print('Valor inválido. Tente novamente.')
@@ -229,7 +233,13 @@ def menu():
                     #return
                 #Bm = Decimal(round(float(Bm), 4))
                 Bm = ut_para_t(Bm)
-                print(f'Amplitude do campo magnético (Bm): {Bm:.4g} T')
+                Em = amplitude_campo_eletrico()
+                I = intensidade_onda()
+                print(Bm)
+                print(Em)
+                print(I)
+                print(f'Amplitude do campo elétrico (Em): {Em:.4g} V/m')
+                print(f'Intensidade da onda (I): {I:.4g} W/m^2')
             elif option == '0':
                 return
             else:
