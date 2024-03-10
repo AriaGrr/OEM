@@ -78,7 +78,13 @@ def numero_onda():
     k = 2 * pi / l
     return k
 
+# Função para calcular a amplitude do campo elétrico apartir da intensidade da onda
+def amplitude_campo_eletrico_intensidade():
+    Em = (2 * I / c)**(1/2)
+    return Em
+
 # Função para calcular a amplitude do campo elétrico
+# Correta
 def amplitude_campo_eletrico():
     Em = Bm * c 
     return Em
@@ -100,11 +106,13 @@ def amplitude_campo_magnetico():
 # Conversores
 
 # Função para converter ut para T
+# Correta
 def ut_para_t(s):
     t = s / 1000000
     return t
 
 # Função para converter T para ut
+# Correta
 def t_para_ut(s):
     t = s * 1000000
     return t
@@ -203,6 +211,17 @@ def menu():
         #
         print(f'Amplitude do campo magnético (Bm): {Bm:.4g} T')
         print(f'Intensidade da onda (I): {I:.4g} W/m^2')
+        print('Deseja resetar as variáveis antes de voltar?')
+        print('s/n')
+        option = input('Escolha uma opção: ')
+        if option == 's':
+            limpar_variaveis()
+            return
+        elif option == 'n':
+            return
+        else:
+            print('Opção inválida. Escolha uma opção válida.')
+            
     elif option == '2':
         print('Opção 2 selecionada...')
         print('A amplitude do campo magnético (Bm) está em T?')
@@ -235,9 +254,9 @@ def menu():
                 Bm = ut_para_t(Bm)
                 Em = amplitude_campo_eletrico()
                 I = intensidade_onda()
-                print(Bm)
-                print(Em)
-                print(I)
+                #print(Bm)
+                #print(Em)
+                #print(I)
                 print(f'Amplitude do campo elétrico (Em): {Em:.4g} V/m')
                 print(f'Intensidade da onda (I): {I:.4g} W/m^2')
             elif option == '0':
@@ -247,9 +266,16 @@ def menu():
         else:
             print('Opção inválida. Escolha uma opção válida.')
 
-
     elif option == '3':
         print('Opção 3 selecionada...')
+        print('Digite a intensidade da onda (I) em W/m^2:')
+        I = Decimal(input('I: '))
+        #if not is_number(I):
+            #print('Valor inválido. Tente novamente.')
+            #return
+        #I = Decimal(round(float(I), 4))
+
+
     elif option == '4':
         print('Opção 4 selecionada...')
     elif option == '5':
