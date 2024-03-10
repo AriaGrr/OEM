@@ -23,6 +23,7 @@ c = Decimal(299792458) # Velocidade da luz no vácuo em m/s
 #c = Decimal(3 * 10**8) # Velocidade da luz no vácuo em m/s
 #u = Decimal(4 * pi * 10**-7) # Permeabilidade magnética do vácuo em H/m
 u = Decimal(4) * pi * Decimal('1e-7') # Permeabilidade magnética do vácuo em H/m
+e = Decimal(8.854187817 * 10**-12) # Permissividade elétrica do vácuo em F/m
 
 # Variáveis
 f = Decimal(0) # Frequência em Hz
@@ -89,7 +90,8 @@ def intensidade_onda():
 
 # Função para calcular a intensidade da onda
 def intensidade_onda():
-    I = (Em * Bm) / (2 * c)
+    #I = (Em * Bm) / (2 * c)
+    I = (1/2) * e * c * Em**2
     return I
 
 # Função para calcular a amplitude do campo magnético a partir da amplitude do campo elétrico
