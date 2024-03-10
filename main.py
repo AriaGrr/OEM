@@ -299,13 +299,17 @@ def menu():
 # Menu principal
 while True:
     clear_screen()
-    # Melhorar para que os seguintes prints apareçam apenas uma vez ao compilar?
+
     if teste == Decimal(0):
         print('OEM: Ondas Eletromagnéticas com Python')
         print('Membros: Marjorie Luize Martins Costa, Paulo Andre de Oliveira Hirata, Diogo, Victor')
-        print('Paragrafo com a descrição do programa') 
+        # Melhorar a descrição do programa
+        print('Paragrafo com a descrição do programa')
+        print('O programa foi desenvolvido para calcular e converter grandezas relacionadas a ondas eletromagnéticas.')
+        #
+        print('Pressione Enter para continuar...')
+        input() 
         teste = Decimal(1)
-
 
     print('Opções:')
     print('1 - Equações')
