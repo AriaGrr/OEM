@@ -79,7 +79,7 @@ def numero_onda():
 
 # Função para calcular a amplitude do campo elétrico
 def amplitude_campo_eletrico():
-    Em = Bm * c / w
+    Em = Bm * c * u
     return Em
 
 # Função para calcular a intensidade da onda
@@ -94,7 +94,7 @@ def intensidade_onda():
 
 # Função para calcular a amplitude do campo magnético a partir da amplitude do campo elétrico
 def amplitude_campo_magnetico():
-    Bm = Em / (u * c)
+    Bm = Em / (c * u)
     return Bm
 
 
