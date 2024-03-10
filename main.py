@@ -12,6 +12,9 @@
 # Menu: 
 # Retorno de valores em 4 significativos
 
+# Bibliotecas
+#import decimal
+import math
 from decimal import Decimal
 
 # Variaveis globais
@@ -26,6 +29,7 @@ c = Decimal(299792458) # Velocidade da luz no vácuo em m/s
 #u = Decimal(4 * pi * 10**-7) # Permeabilidade magnética do vácuo em H/m
 u = Decimal(4) * pi * Decimal('1e-7') # Permeabilidade magnética do vácuo em H/m
 e = Decimal(8.854187817 * 10**-12) # Permissividade elétrica do vácuo em F/m
+#dois = Decimal(2) # Número 2, pelo bug do Decimal
 
 # Variáveis
 f = Decimal(0) # Frequência em Hz
@@ -81,8 +85,12 @@ def numero_onda():
     return k
 
 # Função para calcular a amplitude do campo elétrico apartir da intensidade da onda
+# Correta
 def amplitude_campo_eletrico_intensidade():
-    Em = (2 * I / c)**(1/2)
+    a = Decimal(2) * I
+    b = e * c
+    d = a / b
+    Em = d.sqrt()
     return Em
 
 # Função para calcular a amplitude do campo elétrico
@@ -267,7 +275,11 @@ def menu():
             #print('Valor inválido. Tente novamente.')
             #return
         #I = Decimal(round(float(I), 4))
-
+        Em = amplitude_campo_eletrico_intensidade()
+        Bm = amplitude_campo_magnetico()
+        print(f'Amplitude do campo elétrico (Em): {Em:.4g} V/m')
+        print(f'Amplitude do campo magnético (Bm): {Bm:.4g} T')
+        limpar_variaveis()
 
     elif option == '4':
         print('Opção 4 selecionada...')
@@ -302,10 +314,10 @@ while True:
 
     if teste == Decimal(0):
         print('OEM: Ondas Eletromagnéticas com Python')
-        print('Membros: Marjorie Luize Martins Costa, Paulo Andre de Oliveira Hirata, Diogo, Victor')
+        print('Desnvolvedores: Marjorie Luize Martins Costa, Paulo Andre de Oliveira Hirata, Diogo, Victor')
         # Melhorar a descrição do programa
         print('Paragrafo com a descrição do programa')
-        print('O programa foi desenvolvido para calcular e converter grandezas relacionadas a ondas eletromagnéticas.')
+        print('O programa foi desenvolvido para calcular e converter grandezas relacionadas a ondas eletromagnéticas. Após escolher uma opção, siga as instruções para obter o resultado desejado. O programa retorna os valores com 4 significativos. As váriaveis são limpas após cada cálculo.')
         #
         print('Pressione Enter para continuar...')
         input() 
