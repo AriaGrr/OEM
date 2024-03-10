@@ -84,14 +84,10 @@ def amplitude_campo_eletrico():
     return Em
 
 # Função para calcular a intensidade da onda
-def intensidade_onda():
-    I = (Em * Bm) / (2 * c)
-    return I
-
-# Função para calcular a intensidade da onda
+# Correta
 def intensidade_onda():
     #I = (Em * Bm) / (2 * c)
-    I = (1/2) * e * c * Em**2
+    I = Decimal(1/2) * e * c * Em**2
     return I
 
 # Função para calcular a amplitude do campo magnético a partir da amplitude do campo elétrico
