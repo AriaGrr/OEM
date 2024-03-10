@@ -97,20 +97,47 @@ def amplitude_campo_magnetico():
     Bm = Em / c
     return Bm
 
+# Conversores
+
+# Função para converter ut para T
+def ut_para_t(s):
+    s = Decimal(10**-6)
+    return s
+
+# Função para converter T para ut
+def t_para_ut(s):
+    s = Decimal(10**6)
+    return s
 
 # Função para o menu de conversores
 def conversores():
     clear_screen()
     print('Opções de conversão:')
-    print('1 - Hz para rad/s:')
-    print('2 - rad/s para Hz:')
+    print('1 - Microtesla para Tesla (ut -> T)')
+    print('2 - Tesla para Microtesla (T -> ut)')
     print('0 - Voltar!')
     option = input('Escolha uma opção: ')
 
     if option == '1':
         print('Opção 1 selecionada...')
+        print('Digite o valor em microtesla (ut):')
+        ut = Decimal(input('ut: '))
+        #if not is_number(ut):
+            #print('Valor inválido. Tente novamente.')
+            #return
+        #ut = Decimal(round(float(ut), 4))
+        T = ut_para_t(ut)
+        print(f'{ut} ut = {T:.4g} T')
     elif option == '2':
         print('Opção 2 selecionada...')
+        print('Digite o valor em Tesla (T):')
+        T = Decimal(input('T: '))
+        #if not is_number(T):
+            #print('Valor inválido. Tente novamente.')
+            #return
+        #T = Decimal(round(float(T), 4))
+        ut = t_para_ut(T)
+        print(f'{T} T = {ut:.4g} ut')
     elif option == '0':
         return
     else:
@@ -171,12 +198,46 @@ def menu():
         #print(Bm)
         #print(I)
         #
-        print(f'Amplitude do campo magnético (Bm): {Bm:.4g}')
-        print(f'Intensidade da onda (I): {I:.4g}')
-
-
+        print(f'Amplitude do campo magnético (Bm): {Bm:.4g} T')
+        print(f'Intensidade da onda (I): {I:.4g} W/m^2')
     elif option == '2':
         print('Opção 2 selecionada...')
+        print('A amplitude do campo magnético (Bm) está em T?')
+        print('s/n')
+        option = input('Escolha uma opção: ')
+        if option == 's':
+            Bm = Decimal(input('Bm: '))
+            #if not is_number(Bm):
+                #print('Valor inválido. Tente novamente.')
+                #return
+            #Bm = Decimal(round(float(Bm), 4))
+            Em = amplitude_campo_eletrico()
+            I = intensidade_onda()
+            print(f'Amplitude do campo elétrico (Em): {Em:.4g} V/m')
+            print(f'Intensidade da onda (I): {I:.4g} W/m^2')
+        elif option == 'n':
+            print('Escolha uma conversão para T abaixo:')
+            print('1 - ut para T')
+            print('0 - Voltar!')
+            option = input('Escolha uma opção: ')
+            if option == '1':
+                print('Opção 1 selecionada...')
+                print('Digite a amplitude do campo magnético (Bm) em ut:')
+                Bm = Decimal(input('Bm: '))
+                #if not is_number(Bm):
+                    #print('Valor inválido. Tente novamente.')
+                    #return
+                #Bm = Decimal(round(float(Bm), 4))
+                Bm = ut_para_t(Bm)
+                print(f'Amplitude do campo magnético (Bm): {Bm:.4g} T')
+            elif option == '0':
+                return
+            else:
+                print('Opção inválida. Escolha uma opção válida.')
+        else:
+            print('Opção inválida. Escolha uma opção válida.')
+
+
     elif option == '3':
         print('Opção 3 selecionada...')
     elif option == '4':
