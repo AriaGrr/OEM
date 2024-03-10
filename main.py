@@ -87,11 +87,6 @@ def intensidade_onda():
     I = (Em * Bm) / (2 * c)
     return I
 
-# Função para calcular a amplitude do campo elétrico
-def amplitude_campo_eletrico():
-    Em = Bm * c / w
-    return Em
-
 # Função para calcular a intensidade da onda
 def intensidade_onda():
     I = (Em * Bm) / (2 * c)
