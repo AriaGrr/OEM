@@ -12,22 +12,26 @@
 # Menu: 
 # Retorno de valores em 4 significativos
 
+from decimal import Decimal
+
 # Variaveis globais
 
 # Constantes
-pi = float (3.14159265359) # Número pi
-#c = float (299792458) # Velocidade da luz no vácuo em m/s
-c = float (3 * 10**8) # Velocidade da luz no vácuo em m/s
-u = float (4 * pi * 10**-7) # Permeabilidade magnética do vácuo em T*m/A
+#pi = Decimal(3.14159265359) # Número pi
+pi = Decimal(3.1415) # Número pi com 4 significativos
+c = Decimal(299792458) # Velocidade da luz no vácuo em m/s
+#c = Decimal(3 * 10**8) # Velocidade da luz no vácuo em m/s
+#u = Decimal(4 * pi * 10**-7) # Permeabilidade magnética do vácuo em H/m
+u = Decimal(4) * pi * Decimal('1e-7') # Permeabilidade magnética do vácuo em H/m
 
 # Variáveis
-f = float (0) # Frequência em Hz
-l = float (0) # Comprimento de onda em m
-k = float (0) # Número de onda em rad/m
-w = float (0) # Frequência angular em rad/s
-Em = float (0) # Amplitude do campo elétrico em V/m
-Bm = float (0) # Amplitude do campo eletromagnético em T
-I = float (0) # Intensidade da onda eletromagnética em W/m^2
+f = Decimal(0) # Frequência em Hz
+l = Decimal(0) # Comprimento de onda em m
+k = Decimal(0) # Número de onda em rad/m
+w = Decimal(0) # Frequência angular em rad/s
+Em = Decimal(0) # Amplitude do campo elétrico em V/m
+Bm = Decimal(0) # Amplitude do campo eletromagnético em T
+I = Decimal(0) # Intensidade da onda eletromagnética em W/m^2
 
 
 # Função para limpar a tela do terminal
@@ -144,12 +148,17 @@ def menu():
 
     if option == '1':
         print('Opção 1 selecionada...')
+        #print('O valor da amplitude do campo elétrico (Em) está em V/m?')
+        #print('s/n')
+        #option = input('Escolha uma opção: ')
+        #if option == 's':
+
         print('Digite a amplitude do campo elétrico (Em) em V/m:')
         Em = input('Em: ')
         if not is_number(Em):
             print('Valor inválido. Tente novamente.')
             return
-        Em = float(Em)
+        Em = Decimal(Em)
         Bm = amplitude_campo_magnetico()
         I = intensidade_onda()
         # Teste verificando se está salvando corretamente, resposta da saida em conflito no tester do moodle!
@@ -157,8 +166,8 @@ def menu():
         print(Bm)
         print(I)
         #
-        print('Amplitude do campo magnético (Bm): ' + str(Bm))
-        print('Intensidade da onda (I): ' + str(I))
+        print(f'Amplitude do campo magnético (Bm): {Bm:.4g}')
+        print(f'Intensidade da onda (I): {I:.4g}')
 
 
     elif option == '2':
