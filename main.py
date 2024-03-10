@@ -130,6 +130,16 @@ def t_para_ut(s):
     t = s * 1000000
     return t
 
+# Elevar
+def elevar():
+    print('Digite o valor:')
+    x = Decimal(input('Valor: '))
+    y = Decimal(input('E: '))
+    z = x * 10**y
+    print(f'{x} * 10^{y} = {z}')
+    input('Pressione Enter para continuar...')
+    return z
+
 # Função para o menu de conversores
 def conversores():
     clear_screen()
@@ -138,6 +148,8 @@ def conversores():
     print('1 - Microtesla para Tesla (ut -> T)')
     #
     print('2 - Tesla para Microtesla (T -> ut)')
+    #
+    print('3 - E')
     #
     print('0 - Voltar!')
     option = input('Escolha uma opção: ')
@@ -162,6 +174,9 @@ def conversores():
         #T = Decimal(round(float(T), 4))
         ut = t_para_ut(T)
         print(f'{T} T = {ut:.4g} ut')
+    elif option == '3':
+        print('Opção 3 selecionada...')
+        elevar()
     elif option == '0':
         return
     else:
@@ -299,18 +314,33 @@ def menu():
         print(f'Número de onda (k): {k:.4g} rad/m')
         print(f'Frequência angular (w): {w:.4g} rad/s')
         limpar_variaveis()
+
     elif option == '5':
         print('Opção 5 selecionada...')
-
+        print('Digite o comprimento de onda (lambda) em m:')
+        l = Decimal(input('lambda: '))
+        #if not is_number(l):
+            #print('Valor inválido. Tente novamente.')
+            #return
+        #l = Decimal(round(float(l), 4))
+        f = frequencia()
+        k = numero_onda()
+        w = frequencia_angular()
+        print(f'Frequência da onda (f): {f:.4g} Hz')
+        print(f'Número de onda (k): {k:.4g} rad/m')
+        print(f'Frequência angular (w): {w:.4g} rad/s')
         limpar_variaveis()
+
     elif option == '6':
         print('Opção 6 selecionada...')
 
         limpar_variaveis()
+
     elif option == '7':
         print('Opção 7 selecionada...')
 
         limpar_variaveis()
+
     elif option == '0':
         clear_screen()
         return
@@ -347,11 +377,15 @@ while True:
     if option == '1':
         print('Redirecionando para o menu de equações...')
         menu()
+
     elif option == '2':
         print('Redirecionando para o menu de conversores...')
+        conversores()
+
     elif option == '3':
         print('Limpando variáveis...')
         limpar_variaveis()
+        
     elif option == '0':
         break
     else:
