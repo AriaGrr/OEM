@@ -152,9 +152,11 @@ def menu():
         Em = float(Em)
         Bm = amplitude_campo_magnetico()
         I = intensidade_onda()
+        # Teste verificando se está salvando corretamente, resposta da saida em conflito no tester do moodle!
         print(Em)
         print(Bm)
         print(I)
+        #
         print('Amplitude do campo magnético (Bm): ' + str(Bm))
         print('Intensidade da onda (I): ' + str(I))
 
