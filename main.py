@@ -32,7 +32,7 @@ e = Decimal(8.854187817 * 10**-12) # Permissividade elétrica do vácuo em F/m
 #dois = Decimal(2) # Número 2, pelo bug do Decimal
 
 # Variáveis
-f = Decimal(0) # Frequência em Hz
+f = Decimal(0) # Frequência da onda em Hz
 l = Decimal(0) # Comprimento de onda em m
 k = Decimal(0) # Número de onda em rad/m
 w = Decimal(0) # Frequência angular em rad/s
@@ -62,9 +62,10 @@ def limpar_variaveis():
     #except ValueError:
         #return False
 
-# Corrigir as funções de calculo abaixo.
+# Corrigir as funções de calculo abaixo que não estão corretas.
 
 # Função para calcular a frequência angular
+# Correta
 def frequencia_angular():
     w = 2 * pi * f
     return w
@@ -75,11 +76,13 @@ def frequencia():
     return f
 
 # Função para calcular o comprimento de onda
+# Correta
 def comprimento_onda():
     l = c / f
     return l
 
 # Função para calcular o número de onda
+# Correta
 def numero_onda():
     k = 2 * pi / l
     return k
@@ -178,10 +181,10 @@ def menu():
     # Correta
     print('2 - Amplitude do campo magnético (Bm) em T:')
     print('Retorna Em e I.')
-    #
+    # Correta
     print('3 - Intensidade da onda (I) em W/m^2:')
     print('Retorna Bm e Em.')
-    #
+    # Correta
     print('4 - Frequencia da onda (f) em Hz:')
     print('Retorna lambda, k e w.')
     #
@@ -283,7 +286,18 @@ def menu():
 
     elif option == '4':
         print('Opção 4 selecionada...')
-
+        print('Digite a frequência da onda (f) em Hz:')
+        f = Decimal(input('f: '))
+        #if not is_number(f):
+            #print('Valor inválido. Tente novamente.')
+            #return
+        #f = Decimal(round(float(f), 4))
+        l = comprimento_onda()
+        k = numero_onda()
+        w = frequencia_angular()
+        print(f'Comprimento de onda (lambda): {l:.4g} m')
+        print(f'Número de onda (k): {k:.4g} rad/m')
+        print(f'Frequência angular (w): {w:.4g} rad/s')
         limpar_variaveis()
     elif option == '5':
         print('Opção 5 selecionada...')
