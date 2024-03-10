@@ -91,8 +91,10 @@ def intensidade_onda():
     return I
 
 # Função para calcular a amplitude do campo magnético a partir da amplitude do campo elétrico
+# Correta
 def amplitude_campo_magnetico():
-    Bm = Em / (c * u)
+    #Bm = Em / (c * u)
+    Bm = Em / c
     return Bm
 
 
@@ -122,20 +124,28 @@ def menu():
     global f, l, k, w, Em, Bm, I
     clear_screen()
     print('Opções de entradas:')
+    # Correta
     print('1 - Amplitude do campo elétrico (Em) em V/m:')
     print('Retorna Bm e I.')
+    #
     print('2 - Amplitude do campo magnético (Bm):')
     print('Retorna Em e I.')
+    #
     print('3 - Intensidade da onda (I):')
     print('Retorna Bm e Em.')
+    #
     print('4 - Frequencia (f):')
     print('Retorna lambda, k e w.')
+    #
     print('5 - Comprimento de onda (lambda):')
     print('Retorna f, k e w.')
+    #
     print('6 - Número de onda (k):')
     print('Retorna f, lambda e w.')
+    #
     print('7 - Frequencia angular (w):')
     print('Retorna f, lambda e k.')
+    #
     print('0 - Voltar!')
     option = input('Escolha uma opção: ')
 
@@ -153,14 +163,13 @@ def menu():
             #return
         #Em = Decimal(round(float(Em), 4))
 
-        Bm = Decimal(round(amplitude_campo_magnetico(), 4))
-        
+        #Bm = Decimal(round(amplitude_campo_magnetico(), 4))
+        Bm = amplitude_campo_magnetico()
         I = intensidade_onda()
-        
-        # Teste verificando se está salvando corretamente, resposta da saida em conflito no tester do moodle!
-        print(Em)
-        print(Bm)
-        print(I)
+        # Teste 
+        #print(Em)
+        #print(Bm)
+        #print(I)
         #
         print(f'Amplitude do campo magnético (Bm): {Bm:.4g}')
         print(f'Intensidade da onda (I): {I:.4g}')
