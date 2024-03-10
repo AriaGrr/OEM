@@ -16,6 +16,8 @@ from decimal import Decimal
 
 # Variaveis globais
 
+teste = Decimal(0)
+
 # Constantes
 #pi = Decimal(3.14159265359) # Número pi
 pi = Decimal(3.1415) # Número pi com 4 significativos
@@ -211,17 +213,8 @@ def menu():
         #
         print(f'Amplitude do campo magnético (Bm): {Bm:.4g} T')
         print(f'Intensidade da onda (I): {I:.4g} W/m^2')
-        print('Deseja resetar as variáveis antes de voltar?')
-        print('s/n')
-        option = input('Escolha uma opção: ')
-        if option == 's':
-            limpar_variaveis()
-            return
-        elif option == 'n':
-            return
-        else:
-            print('Opção inválida. Escolha uma opção válida.')
-            
+        limpar_variaveis()
+
     elif option == '2':
         print('Opção 2 selecionada...')
         print('A amplitude do campo magnético (Bm) está em T?')
@@ -265,7 +258,7 @@ def menu():
                 print('Opção inválida. Escolha uma opção válida.')
         else:
             print('Opção inválida. Escolha uma opção válida.')
-
+        limpar_variaveis()
     elif option == '3':
         print('Opção 3 selecionada...')
         print('Digite a intensidade da onda (I) em W/m^2:')
@@ -278,13 +271,22 @@ def menu():
 
     elif option == '4':
         print('Opção 4 selecionada...')
+
+        limpar_variaveis()
     elif option == '5':
         print('Opção 5 selecionada...')
+
+        limpar_variaveis()
     elif option == '6':
         print('Opção 6 selecionada...')
+
+        limpar_variaveis()
     elif option == '7':
         print('Opção 7 selecionada...')
+
+        limpar_variaveis()
     elif option == '0':
+        clear_screen()
         return
     else:
         print('Opção inválida. Escolha uma opção válida.')
@@ -297,11 +299,13 @@ def menu():
 # Menu principal
 while True:
     clear_screen()
-
     # Melhorar para que os seguintes prints apareçam apenas uma vez ao compilar?
-    print('OEM: Ondas Eletromagnéticas com Python')
-    print('Membros: Marjorie Luize Martins Costa, Paulo Andre de Oliveira Hirata, Diogo, Victor')
-    print('Paragrafo com a descrição do programa')
+    if teste == Decimal(0):
+        print('OEM: Ondas Eletromagnéticas com Python')
+        print('Membros: Marjorie Luize Martins Costa, Paulo Andre de Oliveira Hirata, Diogo, Victor')
+        print('Paragrafo com a descrição do programa') 
+        teste = Decimal(1)
+
 
     print('Opções:')
     print('1 - Equações')
