@@ -64,17 +64,29 @@ def limpar_variaveis():
 
 # Corrigir as funções de calculo abaixo que não estão corretas.
 
+# Função para calcular frequencia a partir da frequência angular
+# Correta
+def frequencia_frequencia_angular():
+    f = w / (2 * pi)
+    return f
+
+# Função para calcular o comprimento de onda apartir da frequência angular
+# 
+#def comprimento_onda_frequencia_angular():
+    #l = 2 * pi / w
+    #return l
+
 # Função para calcular a frequência angular
 # Correta
 def frequencia_angular():
     w = 2 * pi * f
     return w
 
-# Função para calcular a frequência apartir do número de onda
-# 
-def frequencia_numero_onda():
-    f = c * k
-    return f
+# Função para calcular o comprimento apartir do número de onda
+# Correta
+def comprimento_numero_onda():
+    s = (2 * pi) / k
+    return s
 
 # Função para calcular a frequência
 # Correta
@@ -373,11 +385,11 @@ def menu():
         option = input('Escolha uma opção: ')
         if option == 's':
             k = Decimal(elevar())
-            f = frequencia_numero_onda()
-            l = comprimento_onda()
+            l = comprimento_numero_onda()
+            f = frequencia()
             w = frequencia_angular()
-            print(f'Frequência da onda (f): {f:.4g} Hz')
             print(f'Comprimento de onda (lambda): {l:.4g} m')
+            print(f'Frequência da onda (f): {f:.4g} Hz')
             print(f'Frequência angular (w): {w:.4g} rad/s')
         elif option == 'n':
             print('Digite o número de onda (k) em rad/m:')
@@ -386,12 +398,11 @@ def menu():
                 #print('Valor inválido. Tente novamente.')
                 #return
             #k = Decimal(round(float(k), 4))
-
-            f = frequencia_numero_onda()
-            l = comprimento_onda()
+            l = comprimento_numero_onda()
+            f = frequencia()
             w = frequencia_angular()
-            print(f'Frequência da onda (f): {f:.4g} Hz')
             print(f'Comprimento de onda (lambda): {l:.4g} m')
+            print(f'Frequência da onda (f): {f:.4g} Hz')
             print(f'Frequência angular (w): {w:.4g} rad/s')
         else:
             print('Opção inválida. Escolha uma opção válida.')
@@ -399,6 +410,29 @@ def menu():
 
     elif option == '7':
         print('Opção 7 selecionada...')
+        print('O valor da frequência angular (w) em rad/s está E?')
+        print('s/n')
+        option = input('Escolha uma opção: ')
+        if option == 's':
+            w = Decimal(elevar())
+            # Correto
+            f = frequencia_frequencia_angular()
+            print(f'Frequência da onda (f): {f:.4g} Hz')
+
+
+        elif option == 'n':
+            print('Digite a frequência angular (w) em rad/s:')
+            w = Decimal(input('w: '))
+            #if not is_number(w):
+                #print('Valor inválido. Tente novamente.')
+                #return
+            #w = Decimal(round(float(w), 4))
+            f = frequencia_frequencia_angular()
+            print(f'Frequência da onda (f): {f:.4g} Hz')
+
+
+        else:
+            print('Opção inválida. Escolha uma opção válida.')
 
         limpar_variaveis()
 
