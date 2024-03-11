@@ -1,8 +1,8 @@
 # Turma 725, Equipe 4:
-# Marjorie Luize Martins Costa, RA:
+# Marjorie Luize Martins Costa, RA: 24223084-5
 # Paulo Andre de Oliveira Hirata, RA:
-# Diogo, RA:
-# Victor, RA:
+# Diogo Santos Linna, RA:
+# Victor Merker Binda, RA:
 
 # Variaveis Globais: float f, lambda, k, w, Em, Bm, I, c, pi.
 # Paragrafo explicativo em print
@@ -379,7 +379,7 @@ while True:
 
     if teste == Decimal(0):
         print('OEM: Ondas Eletromagnéticas com Python')
-        print('Desnvolvedores: Marjorie Luize Martins Costa, Paulo Andre de Oliveira Hirata, Diogo, Victor Merker Binda')
+        print('Desnvolvedores: Marjorie Luize Martins Costa, Paulo Andre de Oliveira Hirata, Diogo Santos Linna, Victor Merker Binda')
         # Melhorar a descrição do programa
         print('Paragrafo com a descrição do programa')
         print('O programa foi desenvolvido para calcular e converter grandezas relacionadas a ondas eletromagnéticas. Após escolher uma opção, siga as instruções para obter o resultado desejado. O programa retorna os valores com 4 significativos. As váriaveis são limpas após cada cálculo.')
