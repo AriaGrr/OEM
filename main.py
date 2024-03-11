@@ -379,7 +379,7 @@ while True:
 
     if teste == Decimal(0):
         print('OEM: Ondas Eletromagnéticas com Python')
-        print('Desnvolvedores: Marjorie Luize Martins Costa, Paulo Andre de Oliveira Hirata, Diogo, Victor')
+        print('Desnvolvedores: Marjorie Luize Martins Costa, Paulo Andre de Oliveira Hirata, Diogo, Victor Merker Binda')
         # Melhorar a descrição do programa
         print('Paragrafo com a descrição do programa')
         print('O programa foi desenvolvido para calcular e converter grandezas relacionadas a ondas eletromagnéticas. Após escolher uma opção, siga as instruções para obter o resultado desejado. O programa retorna os valores com 4 significativos. As váriaveis são limpas após cada cálculo.')
