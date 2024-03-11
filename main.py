@@ -1,7 +1,7 @@
 # Turma 725, Equipe 4:
 # Marjorie Luize Martins Costa, RA: 24223084-5
 # Paulo Andre de Oliveira Hirata, RA:
-# Diogo Santos Linna, RA:
+# Diogo Santos Linna, RA: 24.123.003-6
 # Victor Merker Binda, RA:
 
 # Variaveis Globais: float f, lambda, k, w, Em, Bm, I, c, pi.
