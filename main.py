@@ -418,7 +418,10 @@ def menu():
             # Correto
             f = frequencia_frequencia_angular()
             print(f'Frequência da onda (f): {f:.4g} Hz')
-
+            l = comprimento_onda()
+            k = numero_onda()
+            print(f'Comprimento de onda (lambda): {l:.4g} m')
+            print(f'Número de onda (k): {k:.4g} rad/m')
 
         elif option == 'n':
             print('Digite a frequência angular (w) em rad/s:')
@@ -429,7 +432,10 @@ def menu():
             #w = Decimal(round(float(w), 4))
             f = frequencia_frequencia_angular()
             print(f'Frequência da onda (f): {f:.4g} Hz')
-
+            l = comprimento_onda()
+            k = numero_onda()
+            print(f'Comprimento de onda (lambda): {l:.4g} m')
+            print(f'Número de onda (k): {k:.4g} rad/m')
 
         else:
             print('Opção inválida. Escolha uma opção válida.')
