@@ -1,7 +1,7 @@
 # OEM
 Ondas Eletromagnéticas com Python
 
-    Ao compilar, o programa deve exibir os nomes dos integrantes do grupo, que devem ser os autores do programa,
+Ao compilar, o programa deve exibir os nomes dos integrantes do grupo, que devem ser os autores do programa,
 tambem deve exibir um parágrafo com uma descrição do programa, informando os conceitos físicos básicos
 envolvidos, os cálculos que são possíveis realizar, etc, limitações, outras informações pertinentes e o menu de
 opções para interação com o usuário. Manter somente os cálculos já realizados e mostrar novamente o menu, caso
