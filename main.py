@@ -379,7 +379,7 @@ while True:
 
     if teste == Decimal(0):
         print('OEM: Ondas Eletromagnéticas com Python')
-        print('Desnvolvedores: Marjorie Luize Martins Costa, Paulo Andre de Oliveira Hirata, Diogo Santos Linna, Victor Merker Binda')
+        print('Desenvolvedores: Marjorie Luize Martins Costa, Paulo Andre de Oliveira Hirata, Diogo Santos Linna, Victor Merker Binda')
         # Melhorar a descrição do programa
         print('Este programa foi desenvolvido para realizar cálculos e conversões relacionadas a ondas eletromagnéticas. Ele permite calcular e converter grandezas como frequência, comprimento de onda, intensidade do campo elétrico e magnético, entre outras. O funcionamento do programa é simples: ao iniciá-lo, você será apresentado a um menu com diferentes opções. Após escolher uma opção, siga as instruções fornecidas para inserir os dados necessários. O programa então realizará os cálculos correspondentes e fornecerá os resultados com precisão de 4 significativos. É importante ressaltar que as variáveis utilizadas são automaticamente limpas após cada cálculo, garantindo a integridade dos resultados e a eficiência do programa. Sinta-se à vontade para explorar as funcionalidades oferecidas e utilizar o programa conforme suas necessidades relacionadas a ondas eletromagnéticas.')
         #
